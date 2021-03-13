@@ -6,13 +6,15 @@
 
 ### Make sure you have node and npm install
 
+## Steps to follow:
+
 ### 1. Launch a terminal and swicth to the directory you want to clone the app to.
 
 ### 2. Clone the Repository using git clone https://github.com/Istine/wireframe.git
 
 ### 3. Switch to the wireframe directory
 
-### 4. run the command npm install
+### 4. run the command npm installed.
 
 ### 5. run npm start
 
