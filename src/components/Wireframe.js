@@ -1,6 +1,7 @@
 import React from 'react'
 import '../scss/index.scss'
 import useSwitch from '../hooks/useSwitch'
+import Menu from './Menu'
 
 export default function Wireframe() {
 
@@ -14,23 +15,10 @@ export default function Wireframe() {
     }
 
     // List Items for App Mode
-    const listItems = state.appMode.map(item => (
-        <li
-            onClick={() => alterState('active', item)}
-            style={state.active === item ? {
-                background: "#999"
-            } : {}} key={item}>{item}</li>
-    ))
+    const listItems = <Menu data={state.appMode} active={state.active} alterState={alterState} name={state.name} />
 
     // List Items for Admin Mode
-    const adminItems = state.adminMode.map(item => (
-        <li
-            onClick={() => alterState('active', item)}
-            style={state.active === item ? {
-                background: "#ddd"
-            } : {}}
-            key={item}>{item}</li>
-    ))
+    const adminItems = <Menu data={state.adminMode} active={state.active} alterState={alterState} name={state.name} />
 
     //Check which mode and display items accordingly.
     const itemToShow = state.name === "app" ? listItems : adminItems
